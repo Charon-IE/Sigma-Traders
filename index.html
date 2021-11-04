@@ -4,24 +4,65 @@
         <title>
             Welcome to Samson's Homepage. 
         </title>
+        <audio id="xyz" src="http://soundbible.com/grab.php?id=81&type=mp3" preload="auto"></audio>
+        <audio id="cow" src="http://soundbible.com/grab.php?id=1568&type=mp3" preload="auto"></audio>
         <script>
+             function tunes() {
+                var audio = new Audio('https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3');
+                audio.play();
+               }
+
+          function SocialCredit() {
+             alert("GREETINGS! TENCENT SECURITY! SOCIAL CREDIT 数字 NOW! MANADAOTRY!");
+          }
+        
+          function Gaming() {
+              var txt = prompt("GREETINGS! SOCIAL CREDIT 数字 NOW! CONTINUE");
+              var num = parseInt(txt);
+               if(isNaN(num)) {
+                   alert("INCORRECT! NO NUMBER 再次表现");
+                   Gaming();
+               }
+
+               if(num<100) {
+                document.getElementById('xyz').play();
+                alert("ALERT !!!!!  ALERT!!  BOZO DETECTZǒngtǒng gàozhī dāngjú tāmen de fāngshì ");
+               }
+               
+               if (num>100)
+               document.getElementById('cow').play();
+               alert("GOOD ! THANK YOU总统快乐好")
+          }
+
+
+
+
+
              function test() {
-                var str = prompt("Please enter Adam Gleeno's TY girlfriend's Age");
+                var str = prompt("Please enter Adam's TY GF's Age");
                 var number = parseInt(str);
                 if (isNaN(str)) {
                     alert("Not a number bozo");
+                    var audio = new Audio('https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3');
+                    audio.play();
                 }
                 if (number ==13) {
                     alert("That is correct, Adam's TY GF is 13!");          
                 }              
                 else {
-                    alert("Incorrect bozo, try again!");   
+                var audio = new Audio('https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3');
+                audio.play();
+                    alert("Incorrect bozo, try again!"); 
                 }
              }
         </script>
     </head>
-    <body>
+    <body onload ="SocialCredit();">
         <img src = "https://media.discordapp.net/attachments/720413077597716590/874040398828412928/tenor_1.gif">
-        <button onclick='test();'>Click Me!</button>
+        <br>
+        <button onclick='test();'>Adam's TY  Age Calculator </button>
+        <button onclick='tunes();'>Some Tunes </button> 
+        <br>
+        <button onclick='Gaming();'>SOCIAL CREDIT MANDATORY </button>
     </body>
 </HTML> 
