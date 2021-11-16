@@ -1,68 +1,71 @@
 <!DOCTYPE html>
-<HTML>
-    <head>
-        <title>
-            Welcome to Samson's Homepage. 
-        </title>
-        <audio id="xyz" src="http://soundbible.com/grab.php?id=81&type=mp3" preload="auto"></audio>
-        <audio id="cow" src="http://soundbible.com/grab.php?id=1568&type=mp3" preload="auto"></audio>
-        <script>
-             function tunes() {
-                var audio = new Audio('https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3');
-                audio.play();
-               }
+<html>
+<meta charset="utf-8" />
 
-          function SocialCredit() {
-             alert("GREETINGS! TENCENT SECURITY! SOCIAL CREDIT 数字 NOW! MANADAOTRY!");
-          }
-        
-          function Gaming() {
-              var txt = prompt("GREETINGS! SOCIAL CREDIT 数字 NOW! CONTINUE");
-              var num = parseInt(txt);
-               if(isNaN(num)) {
-                   alert("INCORRECT! NO NUMBER 再次表现");
-                   Gaming();
-               }
+<head>
+    <script>
+        function Plus() {
+            var txt1 = document.getElementById("txtInputBox1").value;
+            var num1 = parseInt(txt1);
 
-               if(num<100) {
-                document.getElementById('xyz').play();
-                alert("ALERT !!!!!  ALERT!!  BOZO DETECTZǒngtǒng gàozhī dāngjú tāmen de fāngshì ");
-               }
-               
-               if (num>100)
-               document.getElementById('cow').play();
-               alert("GOOD ! THANK YOU总统快乐好")
-          }
+            var txt2 = document.getElementById("txtInputBox2").value;
+            var num2 = parseInt(txt2);
 
+            var Total = num1 + num2;
+            var Result = num1 + "+" + num2 + "=" + Total;
 
+            document.getElementById("divOutput").innerHTML = Result;
+        }
 
+        function Minus() {
+            var txt1 = document.getElementById("txtInputBox1").value;
+            var num1 = parseInt(txt1);
 
+            var txt2 = document.getElementById("txtInputBox2").value;
+            var num2 = parseInt(txt2);
 
-             function test() {
-                var str = prompt("Please enter Adam's TY GF's Age");
-                var number = parseInt(str);
-                if (isNaN(str)) {
-                    alert("Not a number bozo");
-                    var audio = new Audio('https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3');
-                    audio.play();
-                }
-                if (number ==13) {
-                    alert("That is correct, Adam's TY GF is 13!");          
-                }              
-                else {
-                var audio = new Audio('https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3');
-                audio.play();
-                    alert("Incorrect bozo, try again!"); 
-                }
-             }
-        </script>
-    </head>
-    <body onload ="SocialCredit();">
-        <img src = "https://media.discordapp.net/attachments/720413077597716590/874040398828412928/tenor_1.gif">
-        <br>
-        <button onclick='test();'>Adam's TY  Age Calculator </button>
-        <button onclick='tunes();'>Some Tunes </button> 
-        <br>
-        <button onclick='Gaming();'>SOCIAL CREDIT MANDATORY </button>
-    </body>
-</HTML> 
+            var Total = num1 - num2;
+            var Result = num1 + "-" + num2 + "=" + Total;
+
+            document.getElementById("divOutput").innerHTML = Result;
+        }
+
+        function Multi() {
+            var txt1 = document.getElementById("txtInputBox1").value;
+            var num1 = parseInt(txt1);
+
+            var txt2 = document.getElementById("txtInputBox2").value;
+            var num2 = parseInt(txt2);
+
+            var Total = num1 * num2;
+            var Result = num1 + "*" + num2 + "=" + Total;
+
+            document.getElementById("divOutput").innerHTML = Result;
+        }
+
+        function Div() {
+            var txt1 = document.getElementById("txtInputBox1").value;
+            var num1 = parseInt(txt1);
+
+            var txt2 = document.getElementById("txtInputBox2").value;
+            var num2 = parseInt(txt2);
+
+            var Total = num1 / num2;
+            var Result = num1 + "/" + num2 + "=" + Total;
+
+            document.getElementById("divOutput").innerHTML = Result;
+        }
+
+    </script>
+</head>
+
+<body>
+    <h2>The Little Calculator (TM Samson 2022)</h2>
+    <input type="text" id="txtInputBox1" value="1">
+    <input type=' text' id='txtInputBox2'><br>
+    <button onclick='Plus();'>+</button> <button onclick='Minus();'>-</button>
+    <button onclick='Multi();'>*</button> <button onclick='Div();'>/</button>
+    <div id='divOutput'>Output will go here</div>
+</body>
+
+</html>
