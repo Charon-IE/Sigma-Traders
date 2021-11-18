@@ -1,71 +1,36 @@
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8" />
-
 <head>
     <script>
-        function Plus() {
+        var Result, Answer, txtOutput;
+        function getnumbers(eqn) {
             var txt1 = document.getElementById("txtInputBox1").value;
             var num1 = parseInt(txt1);
-
             var txt2 = document.getElementById("txtInputBox2").value;
             var num2 = parseInt(txt2);
-
-            var Total = num1 + num2;
-            var Result = num1 + "+" + num2 + "=" + Total;
-
-            document.getElementById("divOutput").innerHTML = Result;
+            if (isNaN(num1) || isNaN(num2)) {
+                Answer = "Not a Number, Please enter a number";
+            }
+            else {
+                Result = num1 + eqn + num2;
+                Answer = Result + "=" + eval(Result);
+            }
+            document.getElementById("divOutput").innerHTML = Answer;
         }
-
-        function Minus() {
-            var txt1 = document.getElementById("txtInputBox1").value;
-            var num1 = parseInt(txt1);
-
-            var txt2 = document.getElementById("txtInputBox2").value;
-            var num2 = parseInt(txt2);
-
-            var Total = num1 - num2;
-            var Result = num1 + "-" + num2 + "=" + Total;
-
-            document.getElementById("divOutput").innerHTML = Result;
-        }
-
-        function Multi() {
-            var txt1 = document.getElementById("txtInputBox1").value;
-            var num1 = parseInt(txt1);
-
-            var txt2 = document.getElementById("txtInputBox2").value;
-            var num2 = parseInt(txt2);
-
-            var Total = num1 * num2;
-            var Result = num1 + "*" + num2 + "=" + Total;
-
-            document.getElementById("divOutput").innerHTML = Result;
-        }
-
-        function Div() {
-            var txt1 = document.getElementById("txtInputBox1").value;
-            var num1 = parseInt(txt1);
-
-            var txt2 = document.getElementById("txtInputBox2").value;
-            var num2 = parseInt(txt2);
-
-            var Total = num1 / num2;
-            var Result = num1 + "/" + num2 + "=" + Total;
-
-            document.getElementById("divOutput").innerHTML = Result;
-        }
-
     </script>
 </head>
-
 <body>
-    <h2>The Little Calculator (TM Samson 2022)</h2>
+    <h2>The Little Calculator (TM Samson Software 2022) Version 1.01</h2>
     <input type="text" id="txtInputBox1" value="1">
     <input type=' text' id='txtInputBox2'><br>
-    <button onclick='Plus();'>+</button> <button onclick='Minus();'>-</button>
-    <button onclick='Multi();'>*</button> <button onclick='Div();'>/</button>
-    <div id='divOutput'>Output will go here</div>
+    <button onclick="getnumbers('+');">+</button> <button onclick="getnumbers('-');">-</button>
+    <button onclick="getnumbers('*');">*</button> <button onclick="getnumbers('/');">/</button>
+    <div id='divOutput'></div>
+    <hr>
+    <h3>Made with love by Samson Software</h3>
+    <p> **Issued to Dark</p>
+    <b> ***NOT FOR DISTRIBUTION </b>
+    <img src="https://lammpstube.com/wp-content/uploads/2019/12/SAMSON-software-1024x490.jpg"> 
 </body>
-
 </html>
