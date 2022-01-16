@@ -13,25 +13,29 @@
                     text.remove();
                     textfield = 0;
                 }
-                if (e.keyCode == 38) {
+                //Up
+                if (e.keyCode == 38 && topPos > -20) {
                     topPos -= 10;
                 }
-                else if (e.keyCode == 37) {
+                //Left
+                else if (e.keyCode == 37 && leftPos>-40) {
                     leftPos -= 10;
                 }
-                else if (e.keyCode == 39) {
+                //Right
+                else if (e.keyCode == 39 && leftPos <=1320) {
                     leftPos += 10;
                 }
-                else if (e.keyCode == 40) {
+                //Down
+                else if (e.keyCode == 40 && topPos<=500) {
                     topPos += 10;
                 }
                 if (e.keyCode == 32) {
                     if (OpenWallet == 1) {
-                    changeImgSrc(document.getElementById("Wallet"),'Transparent Wallet.png');
+                    changeImgSrc(document.getElementById("Wallet"),'HTML Images/Transparent Wallet.png');
                     OpenWallet = OpenWallet - 1;
                     }
                     else {
-                    changeImgSrc(document.getElementById("Wallet"),'Transparent Open Wallet.png');
+                    changeImgSrc(document.getElementById("Wallet"),'HTML Images/Transparent Open Wallet.png');
                     OpenWallet = OpenWallet + 1;
                     }
                 }
@@ -45,7 +49,7 @@
 
         function preloadImages() {
             var Image1 = new Image();
-            Image1.src = "Transparent Open Wallet.png";
+            Image1.src = "HTML Images/Transparent Open Wallet.png";
         }
 
         function changeImgSrc(oImg, sSrc) {
@@ -55,20 +59,20 @@
 </head>
 
 <body onload="init();"
-    style="background-image: url('Adam Gleeno.gif'); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;">
+    style="background-image: url('HTML Images/Adam Gleeno.gif'); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;">
     <div id='text'>
         <h1 style="text-align: center; color:blue">
             Move the Wallet Simulator <br>
         </h1>
         <h2 style="text-align: center; color:blue">
-            Property of Samson Software TM Version 1.01
+            Property of Samson Software TM Version 1.02 *NOT FOR DISTRIBUTION **MADE FOR NEDAS COCKIMINAS
         </h2>
         <p style="text-align: center; font-weight: bold; color:blue">
             Use the arrow keys to move the wallet! Press space to open the wallet. No Money :( 
         </p>
     </div>
     <div id='divWallet' style='position:absolute; left:680px; top:250px'>
-        <img id="Wallet"width="600" height="500" src='Transparent Wallet.png'>
+        <img id="Wallet"width="600" height="500" src='HTML Images/Transparent Wallet.png'>
     </div>
 </body>
 
