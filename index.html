@@ -4,6 +4,7 @@
     <script>
         var leftPos = 680, topPos = 250;
         var textfield = 1;
+        var OpenWallet = 0;
         function init() {
             animate();
             window.onkeydown = function (e) {
@@ -24,6 +25,16 @@
                 else if (e.keyCode == 40) {
                     topPos += 10;
                 }
+                if (e.keyCode == 32) {
+                    if (OpenWallet == 1) {
+                    changeImgSrc(document.getElementById("Wallet"),'HTML Images/Transparent Wallet.png');
+                    OpenWallet = OpenWallet - 1;
+                    }
+                    else {
+                    changeImgSrc(document.getElementById("Wallet"),'HTML Images/Transparent Open Wallet.png');
+                    OpenWallet = OpenWallet + 1;
+                    }
+                }
             }
         }
         function animate() {
@@ -31,24 +42,33 @@
             document.getElementById("divWallet").style.top = topPos + "px";
             window.setTimeout(animate, 10);
         }
+
+        function preloadImages() {
+            var Image1 = new Image();
+            Image1.src = "HTML Images/Transparent Open Wallet.png";
+        }
+
+        function changeImgSrc(oImg, sSrc) {
+            oImg.src = sSrc;
+        }
     </script>
 </head>
 
-<body onload="init();">
+<body onload="init();"
+    style="background-image: url('HTML Images/Adam Gleeno.gif'); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;">
     <div id='text'>
-        <h1 style="text-align: center;">
+        <h1 style="text-align: center; color:blue">
             Move the Wallet Simulator <br>
         </h1>
-        <h2 style="text-align: center;">
-            Property of Samson Software
+        <h2 style="text-align: center; color:blue">
+            Property of Samson Software TM Version 1.01
         </h2>
-        <p style="text-align: center; font-weight: bold;">
-            Use the arrow keys to move the wallet!
+        <p style="text-align: center; font-weight: bold; color:blue">
+            Use the arrow keys to move the wallet! Press space to open the wallet. No Money :( 
         </p>
-        <img src = 'Adam Gleeno.gif' width="250" height="200">
     </div>
     <div id='divWallet' style='position:absolute; left:680px; top:250px'>
-        <img width="600" height="500" src='Transparent Wallet.png'>
+        <img id="Wallet"width="600" height="500" src='HTML Images/Transparent Wallet.png'>
     </div>
 </body>
 
