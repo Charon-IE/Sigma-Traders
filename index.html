@@ -1,36 +1,55 @@
-<!DOCTYPE html>
 <html>
-<meta charset="utf-8" />
+
 <head>
     <script>
-        var Result, Answer, txtOutput;
-        function getnumbers(eqn) {
-            var txt1 = document.getElementById("txtInputBox1").value;
-            var num1 = parseInt(txt1);
-            var txt2 = document.getElementById("txtInputBox2").value;
-            var num2 = parseInt(txt2);
-            if (isNaN(num1) || isNaN(num2)) {
-                Answer = "Not a Number, Please enter a number";
+        var leftPos = 680, topPos = 250;
+        var textfield = 1;
+        function init() {
+            animate();
+            window.onkeydown = function (e) {
+                if (textfield == 1) {
+                    var text = document.getElementById("text");
+                    text.remove();
+                    textfield = 0;
+                }
+                if (e.keyCode == 38) {
+                    topPos -= 10;
+                }
+                else if (e.keyCode == 37) {
+                    leftPos -= 10;
+                }
+                else if (e.keyCode == 39) {
+                    leftPos += 10;
+                }
+                else if (e.keyCode == 40) {
+                    topPos += 10;
+                }
             }
-            else {
-                Result = num1 + eqn + num2;
-                Answer = Result + "=" + eval(Result);
-            }
-            document.getElementById("divOutput").innerHTML = Answer;
+        }
+        function animate() {
+            document.getElementById("divWallet").style.left = leftPos + "px";
+            document.getElementById("divWallet").style.top = topPos + "px";
+            window.setTimeout(animate, 10);
         }
     </script>
 </head>
-<body>
-    <h2>The Little Calculator (TM Samson Software 2022) Version 1.01</h2>
-    <input type="text" id="txtInputBox1" value="1">
-    <input type=' text' id='txtInputBox2'><br>
-    <button onclick="getnumbers('+');">+</button> <button onclick="getnumbers('-');">-</button>
-    <button onclick="getnumbers('*');">*</button> <button onclick="getnumbers('/');">/</button>
-    <div id='divOutput'></div>
-    <hr>
-    <h3>Made with love by Samson Software</h3>
-    <p> **Issued to Dark</p>
-    <b> ***NOT FOR DISTRIBUTION </b>
-    <img src="https://lammpstube.com/wp-content/uploads/2019/12/SAMSON-software-1024x490.jpg"> 
+
+<body onload="init();">
+    <div id='text'>
+        <h1 style="text-align: center;">
+            Move the Wallet Simulator <br>
+        </h1>
+        <h2 style="text-align: center;">
+            Property of Samson Software
+        </h2>
+        <p style="text-align: center; font-weight: bold;">
+            Use the arrow keys to move the wallet!
+        </p>
+        <img src = 'HTML Images/Adam Gleeno.gif' width="250" height="200">
+    </div>
+    <div id='divWallet' style='position:absolute; left:680px; top:250px'>
+        <img width="600" height="500" src='HTML Images/Transparent Wallet.png'>
+    </div>
 </body>
+
 </html>
