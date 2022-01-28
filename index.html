@@ -1,79 +1,140 @@
 <html>
+<style>
+    body {
+        background-image: url('https://i.ibb.co/c12g7wY/Forex-Traders.jpg%27');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
 
-<head>
-    <script>
-        var leftPos = 680, topPos = 250;
-        var textfield = 1;
-        var OpenWallet = 0;
-        function init() {
-            animate();
-            window.onkeydown = function (e) {
-                if (textfield == 1) {
-                    var text = document.getElementById("text");
-                    text.remove();
-                    textfield = 0;
-                }
-                //Up
-                if (e.keyCode == 38 && topPos > -20) {
-                    topPos -= 10;
-                }
-                //Left
-                else if (e.keyCode == 37 && leftPos>-40) {
-                    leftPos -= 10;
-                }
-                //Right
-                else if (e.keyCode == 39 && leftPos <=1320) {
-                    leftPos += 10;
-                }
-                //Down
-                else if (e.keyCode == 40 && topPos<=500) {
-                    topPos += 10;
-                }
-                if (e.keyCode == 32) {
-                    if (OpenWallet == 1) {
-                    changeImgSrc(document.getElementById("Wallet"),'Transparent Wallet.png');
-                    OpenWallet = OpenWallet - 1;
-                    }
-                    else {
-                    changeImgSrc(document.getElementById("Wallet"),'Transparent Open Wallet.png');
-                    OpenWallet = OpenWallet + 1;
-                    }
-                }
-            }
-        }
-        function animate() {
-            document.getElementById("divWallet").style.left = leftPos + "px";
-            document.getElementById("divWallet").style.top = topPos + "px";
-            window.setTimeout(animate, 10);
-        }
+    #NedasPochinkas {
+        vertical-align: text-top;
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+        font-size: 90px;
+        color: red;
+    }
 
-        function preloadImages() {
-            var Image1 = new Image();
-            Image1.src = "Transparent Open Wallet.png";
-        }
+    .SigmaLogo {
+        position: absolute;
+        top: -20px;
+        left: 5px;
+        width: 300px;
+        height: 300px;
+    }
 
-        function changeImgSrc(oImg, sSrc) {
-            oImg.src = sSrc;
-        }
-    </script>
-</head>
+    .MainTitle {
+        text-align: center;
+        font-style: italic;
+        font-size: 40px;
+        font-family: "Lucida Console", "Courier New", monospace;
+    }
 
-<body onload="init();"
-    style="background-image: url('Adam Gleeno.gif'); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;">
-    <div id='text'>
-        <h1 style="text-align: center; color:blue">
-            Move the Wallet Simulator <br>
-        </h1>
-        <h2 style="text-align: center; color:blue">
-            Property of Samson Software TM Version 1.02 *NOT FOR DISTRIBUTION **MADE FOR NEDAS COCKIMINAS
-        </h2>
-        <p style="text-align: center; font-weight: bold; color:blue">
-            Use the arrow keys to move the wallet! Press space to open the wallet. No Money :( 
-        </p>
-    </div>
-    <div id='divWallet' style='position:absolute; left:680px; top:250px'>
-        <img id="Wallet"width="600" height="500" src='Transparent Wallet.png'>
-    </div>
+    .Brazil {
+        background-color: #4CAF50;
+        border: none;
+        color: black;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+    .Brazil2 {
+        background-color: purple;
+        border: none;
+        color: black;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+    .Clock {
+        position: relative;
+        left: 700px;
+        top: -250px;
+    }
+
+    ul {
+        margin: 50;
+        text-align: left;
+        font-size: 20px;
+        list-style-type: none;
+    }
+
+    .Romanian {
+        position: absolute;
+        top: 500px;
+        left: 1300px;
+        width: 600px;
+        height: 500px;
+    }
+
+    .RomanianText{
+        position: absolute;
+        top: 450px;
+        left: 1300px;
+        color:aqua;
+        font-size: 60px;
+    }
+</style>
+<script>
+    function fixNumber(n) {
+        if (n <= 9) {
+            return n = "0" + n;
+        }
+        else
+            return n;
+    }
+    function updateClock() {
+        var myDate = new Date();
+        var s = myDate.getSeconds();
+        var m = myDate.getMinutes();
+        var h = myDate.getHours();
+        document.getElementById("theClock").innerHTML = (fixNumber(h) + ":" + fixNumber(m) + ":" + fixNumber(s));
+        window.setTimeout(updateClock, 1000);
+    }
+</script>
+
+<body onload="updateClock();">
+    <table border="0">
+        <tr>
+            <td colspan="2" width="1980" height="250" valign="top">
+                <img src="https://i.ibb.co/6tN9dkB/Sigma-Coin.png" class="SigmaLogo">
+                <!--Title on page-->
+                <p class="MainTitle"><b></b>Forex Trading for Sigmas PLC</b></p>
+                <div style="position:relative; left:805px; top:-10px;">
+                    <button class="Brazil" onclick="location.href='https://www.tradingview.com/'" type="button">Click
+                        here for Trading View</button>
+                </div>
+                <div style="position:relative; left:790px; top:50px;">
+                    <button class="Brazil2" onclick="location.href='https://www.youtube.com/watch?v=y6120QOlsfU'" type="button">Click
+                        here for Company Theme</button>
+                </div>
+                <img class="Romanian" src="https://c.tenor.com/RJXp3_AabakAAAAM/tigan-gypsy.gif">
+                <p class="Clock" id="theClock" style="text-align:center; font-size:120px; color: #4CAF50;">00:00:00</p>
+            </td>
+        </tr>
+        <tr>
+            <td width="150" height="600" valign="top">
+                <ul>
+                    <li><a href="" style="color: #4CAF50;">About Us</a></li>
+                    <li><a href="" style="color: #4CAF50;">The Owners</a></li>
+                    <li><a href="" style="color: #4CAF50;">The Team</a></li>
+                    <li><a href="" style="color: #4CAF50;">The 9-5 Slaves</a></li>
+                </ul>
+            </td>
+            <td width="800">
+                <p class="RomanianText"><b>One of our happy customers.</b></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="110">
+            </td>
+        </tr>
+    </table>
 </body>
 
 </html>
