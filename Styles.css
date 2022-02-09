@@ -1,0 +1,78 @@
+.Nedas{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    color: green;
+    width: 96.4vw;
+    height: 71vh;
+    margin: 0;
+    padding: 16px;
+    border: 10px solid rgb(53, 16, 218);
+    background-image: url('https://i.ibb.co/HDx13GB/Two-Businesspeople-Shaking-Hand-And-Taking-Bribe-Money-Under-Table-for-Deal-Corruption-in-Business-c.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100vw 76vh;
+    background-attachment: scroll;
+  }
+
+  .Tim{
+    position: relative;
+    left: -26px;
+    top: 55px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    color: green;
+    border: 10px solid rgb(248, 0, 0);
+    height: 60vh;
+    width: 96.4vw;
+    margin: 0;
+    padding: 16px;
+
+    background-image: url('https://i.ibb.co/BqZNRx8/Walter-Moner.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 99vw 65vh;
+    background-attachment: scroll;
+  }
+  .JoeMother {
+            
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            font-size: 20px;
+            color:  green;
+        }
+        .Kheiss {
+            
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            font-size: 40px;
+            color:  lime;
+        }
+        .Head {
+            
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            font-size: 60px;
+            color:  black;
+        }
+        .BitAbout {
+            
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            font-size: 30px;
+            color:  lime;
+        }
+        img{
+            margin: 30;
+            float: right;
+            height: 400px;
+            width: 365px;
+            position:absolute;  
+            left: 1100px;
+            top: 200px;
+        }
+        .picTim{
+            margin: 30;
+            float: right;
+            height: 400px;
+            width: 350px;
+            position:absolute;  
+            left: 1100px;
+            top: 130px;
+
+        }
